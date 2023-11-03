@@ -7,6 +7,8 @@ import Register from "../page/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AdminLayout from "../component/layout/AdminLayout";
 import AddService from "../page/AddService";
+import Contact from "../page/Contact";
+import Services from "../page/Services";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                             <About></About> 
                          </PrivateRoute> 
+            }, 
+            {
+                path: '/contact', 
+                element: <Contact></Contact>
+            },
+            {
+                path: '/services', 
+                element: <Services></Services>
             }
         ]
     }, 

@@ -29,6 +29,7 @@ const Login = () => {
 
   return (
     <div>
+      <Navber></Navber>
       <div className="container m-auto py-12">
         <div className="hero">
           <div className=" flex flex-col-reverse md:flex-row-reverse  items-center">
