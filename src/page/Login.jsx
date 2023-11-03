@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 
 const Login = () => {
 
-    const {loginUser, user} = useAuth()
+    const {loginUser} = useAuth()
     const navigate = useNavigate()
 
     const [email, setEmail] = useState(0)
@@ -29,20 +29,15 @@ const Login = () => {
 
   return (
     <div>
-      <Navber></Navber>
-      <div className="container m-auto">
-        <div className="hero min-h-screen bg-base-200">
-          <div className="hero-content flex-col lg:flex-row-reverse">
-            {/* <div className="text-center lg:text-left">
-              <h1 className="text-5xl font-bold">Login now!</h1>
-              <p className="py-6">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                assumenda excepturi exercitationem quasi. In deleniti eaque aut
-                repudiandae et a id nisi.
-              </p>
-            </div> */}
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-              <form onSubmit={handleLoginUser} className="card-body">
+      <div className="container m-auto py-12">
+        <div className="hero">
+          <div className=" flex flex-col-reverse md:flex-row-reverse  items-center">
+            <div className="text-center lg:text-left bg-slate-400 md:w-[50%] ">
+              <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&q=80&w=1470&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+            </div>
+            <div className="bg-base-100 md:w-[40%]">
+              <form onSubmit={handleLoginUser} className="card-body ">
+                <p className="text-center text-3xl font-bold text-green-500">Please Login</p>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>
@@ -73,10 +68,12 @@ const Login = () => {
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                  <input type="submit" className="btn" value='Login'></input>
+                  <input type="submit" className="btn bg-green-500 hover:bg-slate-600 text-white" value='Login'></input>
                 </div>
               </form>
-              <Link to='/register' className="text-center pb-4">Register</Link>
+              <div className="flex justify-center">
+                <Link to='/register' className="text-center pb-4"> Do you have an account? <span className="text-red-600 font-bold">Register</span></Link>
+              </div>
             </div>
           </div>
         </div>

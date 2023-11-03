@@ -3,6 +3,9 @@ import Navber from "../component/layout/Navber";
 import { useState } from "react";
 import useAuth from "../hook/useAuth";
 
+import registerAnimition from '../assets/animation/register.json'
+import Lottie from "lottie-react";
+
 const Register = () => {
     const {createUser} = useAuth()
     const [email, setEmail] = useState(0)
@@ -29,21 +32,14 @@ const Register = () => {
 
   return (
     <div>
-      <Navber></Navber>
       <div className="container m-auto">
-        <div className="hero min-h-screen bg-base-200">
-          <div className="hero-content flex-col lg:flex-row-reverse">
-          
-            {/* <div className="text-center lg:text-left">
-              <h1 className="text-5xl font-bold">Login now!</h1>
-              <p className="py-6">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                assumenda excepturi exercitationem quasi. In deleniti eaque aut
-                repudiandae et a id nisi.
-              </p>
-            </div> */}
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <p className="text-center pt-5 text-3xl">Register</p>
+        <div >
+          <div className=" flex flex-col lg:flex-row-reverse md: py-10">
+            <div className="md:w-[50%]">
+              <Lottie className="md:w-[500px]" animationData={registerAnimition} loop={true}></Lottie>
+            </div>
+            <div className="md:w-[40%]">
+            <p className="text-center pt-5 text-3xl font-bold text-green-500">Account Register</p>
               <form onSubmit={handleRegister} className="card-body">
                 <div className="form-control">
                   <label className="label">
@@ -74,13 +70,15 @@ const Register = () => {
                     </a>
                   </label>
                 </div>
-                <div className="form-control mt-6">
-                  <input type="submit" className="btn" value="Register"></input>
+                <div className="form-control mt-6 ">
+                  <input type="submit" className="btn bg-green-500 hover:bg-slate-600 text-white" value="Register"></input>
                 </div>
               </form>
-              <Link to="/login" className="text-center pb-4">
-                Login
-              </Link>
+              <div className="text-center">
+                  <Link to="/login" className="text-center pb-4">
+                  Have an account? <span className=" text-red-600 font-bold">Login</span> 
+                  </Link>
+              </div>
             </div>
           </div>
         </div>

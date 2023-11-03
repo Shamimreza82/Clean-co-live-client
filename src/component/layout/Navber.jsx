@@ -1,15 +1,18 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import useAuth from "../../hook/useAuth";
 
 const Navber = () => {
 
   const {user, logeOut } = useAuth()
+  const navigate = useNavigate()
 
 
   const handleLogeOut = () => {
     logeOut()
     .then(()=> {
       console.log("sing Out SuccessFull");
+      navigate('/login')
+
     })
     .catch(err => {
       console.log(err);
@@ -45,7 +48,7 @@ const Navber = () => {
                 </svg>
               </label>
             </div>
-            <div className="flex-1 px-2 mx-2">Chinning</div>
+            <div className="flex-1 px-2 mx-2 text-2xl font-bold">Elite Clean Experts</div>
             <div className="flex-none hidden lg:block">
               <ul className="menu menu-horizontal gap-5">
                 {/* Navbar menu content here */}
